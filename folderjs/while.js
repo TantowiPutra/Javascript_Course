@@ -1,1 +1,4 @@
-console.log("Hello, World");
+var isTrue = true;
+while(isTrue){
+    isTrue = prompt("Lanjut? ");
+}
