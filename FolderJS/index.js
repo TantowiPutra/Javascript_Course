@@ -169,4 +169,83 @@ const character = {
     18
 */
 
+/*
+    13. Destructuring Array
+    const favorites = ["Seafood"];
+ 
+    const [myFood, herFood = "Salad"] = favorites
+    
+    console.log(myFood);
+    console.log(herFood);
+    
+    output:
+    Seafood
+    Salad
+*/
+
+// 14. Tipe Data Map
+const myMap = new Map([
+    ['1', 'a String key'],
+    [1, 'a Number Key'],
+    [true, true]  
+]);
+
+console.log(myMap);
+
+const capital = new Map([
+    ["Jakarta", "Indonesia"],
+    ["London", "England"],
+    ["Tokyo", "Japan"]
+  ]);
+  
+  console.log(capital.size);
+
+  // Fungsi Get digunakan untuk mendapatkan isi dari suatu map   
+  console.log(capital.get("London"));
+
+  // Fungsi set digunakan untuk mengisi map   
+  capital.set("New Delhi", "India");
+  console.log(capital.size);
+
+
+  console.log(capital.get("New Delhi"));
+
+  console.log(capital);
+
+// Fungsi has digunakan untuk mengecek keberadaan suatu key
+console.log(capital.has("London"));
+console.log(capital.has("Irlandia"));
+
+// Fungsi delete digunakan untuk menghapus key dari suatu map
+capital.delete("London");
+console.log(capital.has("London"));
+
+/*
+  15. Set
+  Struktur data yang akan kita bahas berikutnya adalah Set. Set sederhananya merupakan kumpulan nilai (set of values). Hal yang membedakan Set dengan struktur data yang lain adalah data pada Set tidak berurutan dan juga tidak diindeks. Selain itu, data di dalam Set juga bersifat unik dan tidak ada duplikasi. Perhatikan contoh deklarasi Set di bawah ini:
+
+  const numberSet = new Set([1, 4, 6, 4, 1]);
+
+  console.log(numberSet);
+
+
+  Set(3) { 1, 4, 6 }
+*/
+
+const numberSet = new Set([1, 4, 6, 4, 1]);
+numberSet.add(5);
+numberSet.add(10);
+numberSet.add(6);
+
+numberSet.delete(4);
+
+console.log(numberSet);
+
+/*
+  16. WeakMap dan WeakSet
+  
+*/
+
+
+
 
