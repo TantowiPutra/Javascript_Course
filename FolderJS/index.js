@@ -123,7 +123,7 @@ const character = {
 
 // 11. Tipe Data Array
 
-// 12. Penggunaan Spread Operatoros untuk 
+// 12. Penggunaan Spread Operators untuk Array
 
 /*
     11. 1 Menggabungkan Array
@@ -243,8 +243,108 @@ console.log(numberSet);
 
 /*
   16. WeakMap dan WeakSet
-  
 */
+
+// Map
+const visitsCountMap = new Map(); // Menyimpan daftar user
+function countUser(user) {
+    let count = visitsCountMap.get(user) || 0;
+    visitsCountMap.set(user, count + 1);
+}
+
+let jonas = { name: "Jonas" };
+countUser(jonas);  // Menambahkan user "Jonas"
+console.log(visitsCountMap);
+
+jonas = null;  // Data object "Jonas" dihapus
+
+// delay dibutuhkan untuk menunggu garbage collector bekerja
+setTimeout(function() {
+    console.log(visitsCountMap);
+}, 10000)
+
+// WeakMap
+// const { inspect } = require('util');
+
+// const visitsCountMap2 = new WeakMap(); // Menyimpan daftar user
+
+// function countUser(user) {
+//   let count = visitsCountMap2.get(user) || 0;
+//   visitsCountMap2.set(user, count + 1);
+// }
+
+// let jonas2 = { name: "Jonas" };
+// countUser(jonas);  // Menambahkan user "Jonas"
+
+// jonas = null;  // Data object "Jonas" dihapus
+
+// delay dibutuhkan untuk menunggu garbage collector bekerja
+// setTimeout(function() {
+//   console.log(inspect(visitsCountMap2, { showHidden: true }));
+// }, 10000);
+
+/* output
+  WeakMap {  }
+*/
+
+const restaurant = {
+    "name" : "Bakso Mang Dicoding",
+    "city" : "Bandung",
+    "favorite drink" : "Es Teh",
+    "favorite food" : "bakso",
+    "isVegan" : false
+};
+  
+const {name: name, "favorite drink" : favoriteDrink} = restaurant;
+
+const priceInJPY = 5000;
+// Tulis kode di bawah ini
+const currency = new Map();
+currency.set("USD", 14000);
+currency.set("JPY", 131);
+currency.set("SGD", 11000);
+currency.set("MYR", 3500);
+
+const priceInIDR = currency.get("JPY") * priceInJPY;
+
+// 17. Declaring Function
+
+// 18. Function Parameter
+
+// 19. Arrow Function
+
+// 20. Closure
+function outerFunction(x) {
+    function innerFunction(y) {
+        return x + y;
+    }
+    return innerFunction;
+}
+  
+const innerFunc = outerFunction(10); // innerFunc is now a closure
+
+console.log(innerFunc(5)); // Output: 15
+
+function minimal(a, b){
+    if(a < b) return a;
+    else if(a > b) return b;
+    else return a;
+}
+
+console.log(minimal(5, 5));
+
+function findIndex(array, number){
+for(let i = 0; i < array.length; i++){
+    if(array[i] === number){
+        return i;
+    }
+}
+
+return -1;
+}
+
+console.log(findIndex([1,2,3,4,5], 3));
+
 
 
 
